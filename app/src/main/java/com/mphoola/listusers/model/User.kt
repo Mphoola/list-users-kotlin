@@ -1,8 +1,8 @@
 package com.mphoola.listusers.model
 
 data class User(
-    val firstName: String,
-    val surname : String,
-    val age: Int,
-    val city: String
+    val NAME: String,
+    val SURNAME : String,
+    val AGE: Int,
+    val CITY: String
 )

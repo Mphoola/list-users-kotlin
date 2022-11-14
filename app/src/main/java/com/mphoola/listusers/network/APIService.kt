@@ -4,9 +4,10 @@ import com.mphoola.listusers.model.User
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Headers
 
 interface APIService {
-
+    @Headers("x-apikey", "5c5c7076f210985199db5488")
     @GET("/")
     suspend fun  getUsers(): List<User>
 

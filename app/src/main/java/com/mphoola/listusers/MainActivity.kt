@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.mphoola.listusers.ui.theme.ListUsersTheme
 import com.mphoola.listusers.view.ErrorMessage
 import com.mphoola.listusers.view.Filter
+import com.mphoola.listusers.view.UsersList
 import com.mphoola.listusers.viewModel.UserViewModel
 
 class MainActivity : ComponentActivity() {
@@ -41,11 +42,10 @@ class MainActivity : ComponentActivity() {
                         if(usersViewModel.errorMessage.isNotEmpty()){
                             ErrorMessage(message = usersViewModel.errorMessage)
                         }else{
-
+                            UsersList(list = usersViewModel.usersList, state = textState)
                         }
 
                         usersViewModel.getUsers()
-
                     }
                 }
             }
@@ -53,15 +53,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     ListUsersTheme {
-        Greeting("Android")
     }
 }

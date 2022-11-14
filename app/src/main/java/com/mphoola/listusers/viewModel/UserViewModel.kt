@@ -24,12 +24,12 @@ class UserViewModel: ViewModel() {
 
                 usersList = users
             }catch (e: HttpException) {
-                errorMessage = "Something went wrong"
+                errorMessage = e.message()
             } catch (e: IOException) {
-                errorMessage = "Please check your network connection"
+                errorMessage = e.message.toString()
             } catch(e: Exception){
-//               errorMessage = e.message.toString()
-                errorMessage = "Something went wrong"
+               errorMessage = e.message.toString()
+//                errorMessage = "Something went wrong"
             }
         }
     }
